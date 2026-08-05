@@ -38,7 +38,7 @@ jobs:
           key: ${{ secrets.SSH_KEY }}
           port: ${{ secrets.PORT }}
           script: |
-            cd /home/ubuntu/devops/gocart-v2/gocart
+            /home/ubuntu/devops/gocart-v2/devops
             git pull origin main
             sudo docker compose up -d --build
             sudo docker image prune -a -f

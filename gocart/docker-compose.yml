@@ -33,16 +33,9 @@ services:
 
     ports:
       - "3000:3000" # Change to your application's port
-    volumes:
-      - gocart-data:/app
-      - log-data:/app/logs
     networks:
       - app-network
 
 networks:
   app-network:
     external: true
-
-volumes:
-  gocart-data:
-  log-data:

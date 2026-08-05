@@ -1,0 +1,48 @@
+# services:
+#   gocart:
+#     build:
+#       context: .
+#       dockerfile: dockerfile
+#     container_name: gocart-app
+#     restart: always
+
+#     ports:
+#       - "3000:3000" # Change to your application's port
+#     volumes:
+#       - /Users/Nts/OneDrive/Desktop/Devops/gocart/LICENSE.md:/app/LICENSE.md
+#       - gocart-data:/app
+#       - log-data:/app/logs
+#     networks:
+#       - app-network
+
+# networks:
+#   app-network:
+#     external: true
+
+# volumes:
+#   gocart-data:
+#   log-data:
+
+services:
+  gocart:
+    build:
+      context: .
+      dockerfile: dockerfile
+    container_name: gocart-app
+    restart: always
+
+    ports:
+      - "3000:3000" # Change to your application's port
+    volumes:
+      - gocart-data:/app
+      - log-data:/app/logs
+    networks:
+      - app-network
+
+networks:
+  app-network:
+    external: true
+
+volumes:
+  gocart-data:
+  log-data:
